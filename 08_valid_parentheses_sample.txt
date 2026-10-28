@@ -1,0 +1,9 @@
+Data Structure Lab (BCS-351) — Sample Output
+Name: Rajeshwari Agrawal
+Roll No.: 2501920110294
+GL Bajaj Institute of Technology and Management
+Data Structure Lab (BCS-351)
+
+Program: 08_valid_parentheses.c
+Run the corresponding C file and enter the sample values described by its prompts.
+This transcript documents the identity banner; interactive results depend on the values entered.
