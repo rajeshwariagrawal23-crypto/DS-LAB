@@ -1,0 +1,4 @@
+#include "../../common/student_info.h"
+
+#define N 50
+int main(void){student_info();int n,m,w[N][N],used[N]={0},i,j,u,v,cost=0,edges=0;printf("Vertices: ");scanf("%d",&n);if(n<1||n>N)return 1;for(i=0;i<n;i++)for(j=0;j<n;j++)w[i][j]=(i==j)?0:1000000;printf("Edges (u v weight): ");scanf("%d",&m);for(i=0;i<m;i++){int a,b,c;scanf("%d%d%d",&a,&b,&c);if(a>=0&&a<n&&b>=0&&b<n)w[a][b]=w[b][a]=c;}used[0]=1;while(edges<n-1){int best=1000000;u=-1;v=-1;for(i=0;i<n;i++)if(used[i])for(j=0;j<n;j++)if(!used[j]&&w[i][j]<best){best=w[i][j];u=i;v=j;}if(u==-1)break;printf("Edge %d - %d (weight %d)\n",u,v,best);cost+=best;used[v]=1;edges++;}if(edges==n-1)printf("Minimum spanning tree weight: %d\n",cost);else puts("Graph is disconnected; spanning tree does not exist.");puts("Number of Islands (separate connected components) for unweighted adjacency is not computed in this weighted-MST program; use the dedicated GFG solution in the README.");return 0;}

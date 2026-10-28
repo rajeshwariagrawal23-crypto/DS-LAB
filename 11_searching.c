@@ -1,0 +1,3 @@
+#include "../../common/student_info.h"
+
+int main(void){student_info();int a[500],n,x,i,lo,hi,mid,found=-1;printf("Enter n: ");scanf("%d",&n);if(n<0||n>500)return 1;printf("Enter sorted elements for binary search: ");for(i=0;i<n;i++)scanf("%d",&a[i]);printf("Search key: ");scanf("%d",&x);for(i=0;i<n;i++)if(a[i]==x){printf("Linear search index: %d\n",i);break;}if(i==n)puts("Linear search: not found");lo=0;hi=n-1;while(lo<=hi){mid=lo+(hi-lo)/2;if(a[mid]==x){found=mid;break;}if(a[mid]<x)lo=mid+1;else hi=mid-1;}if(found>=0)printf("Binary search index: %d\n",found);else puts("Binary search: not found");return 0;}

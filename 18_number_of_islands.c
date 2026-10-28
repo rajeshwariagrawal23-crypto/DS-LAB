@@ -1,0 +1,3 @@
+#include "../../common/student_info.h"
+
+int main(void){student_info();int r,c,i,j,count=0;char g[100][101];printf("Rows and columns: ");scanf("%d%d",&r,&c);if(r<1||r>100||c<1||c>100)return 1;puts("Enter each row as a string of 0 and 1:");for(i=0;i<r;i++)scanf("%100s",g[i]);int qx[10000],qy[10000];for(i=0;i<r;i++)for(j=0;j<c;j++)if(g[i][j]=='1'){count++;int f=0,b=0;qx[b]=i;qy[b++]=j;g[i][j]='0';while(f<b){int x=qx[f],y=qy[f++],dx[4]={1,-1,0,0},dy[4]={0,0,1,-1},k;for(k=0;k<4;k++){int xx=x+dx[k],yy=y+dy[k];if(xx>=0&&xx<r&&yy>=0&&yy<c&&g[xx][yy]=='1'){g[xx][yy]='0';qx[b]=xx;qy[b++]=yy;}}}}printf("Number of islands: %d\n",count);return 0;}
